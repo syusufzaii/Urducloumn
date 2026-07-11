@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans Arabic", "Noto Nastaliq Urdu", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-urdu: "Noto Nastaliq Urdu", "Noto Sans Arabic", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-green-dark: #0b3c2a;
+  --color-brand-green-light: #165c43;
+  --color-brand-gold: #c5a854;
+  --color-brand-gold-dark: #a68936;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    direction: rtl;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-stone-50 text-stone-900 transition-colors duration-300;
+  }
+
+  /* Custom Urdu-specific styling to make Nastaliq look gorgeous with spacing */
+  .urdu-text {
+    font-family: var(--font-urdu);
+    line-height: 2.3;
+    @apply text-right;
+  }
+
+  /* Elegant custom focus ring */
+  *:focus-visible {
+    @apply outline-2 outline-brand-gold outline-offset-2;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(50%); }
+  100% { transform: translateX(-100%); }
+}
+
+@layer utilities {
+  /* No scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Elegant scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-stone-300 dark:bg-stone-700 rounded-full hover:bg-stone-400 dark:hover:bg-stone-600;
+}

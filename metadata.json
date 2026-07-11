@@ -1,0 +1,6 @@
+{
+  "name": "UrduColumns.pk",
+  "description": "UrduColumns.pk is a premier, modern editorial platform for opinion columns, writer profiles, categories, videos, and analysis in Urdu. Optimized with high-performance RTL typography, Data Saver, offline saving, sitemaps, RSS feeds, an Ad Manager, and a secure editorial CMS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
